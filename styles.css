@@ -1,0 +1,117 @@
+/* Style général pour le body */
+body {
+  margin: 0; /* Supprime les marges par défaut */
+  padding: 0; /* Supprime les espacements par défaut */
+  display: flex; /* Active le mode de mise en page flexible */
+  justify-content: center; /* Centre horizontalement le contenu */
+  align-items: center; /* Centre verticalement le contenu */
+  min-height: 100vh; /* Hauteur minimale de 100% de la fenêtre */
+  background: linear-gradient(135deg, #6a11cb, #fc25c6); /* Dégradé en diagonale */
+  font-family: 'Poppins', sans-serif; /* Police élégante et moderne */
+  color: #fff; /* Couleur de texte blanche */
+}
+
+/* Conteneur principal pour la calculatrice */
+.calculator {
+  background: #fff; /* Fond blanc pour contraster avec l'arrière-plan */
+  border-radius: 16px; /* Coins arrondis */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Ombre subtile pour donner de la profondeur */
+  padding: 20px; /* Espacement interne */
+  width: 300px; /* Largeur fixe */
+}
+
+/* Zone d'affichage pour les entrées et résultats */
+.display {
+  text-align: right; /* Aligne le texte à droite */
+  margin-bottom: 20px; /* Espacement sous la zone d'affichage */
+}
+
+/* Champ d'entrée de la calculatrice */
+.display input {
+  width: 90%; /* Occupe 90% de la largeur du conteneur */
+  padding: 15px; /* Espacement interne */
+  font-size: 1.5rem; /* Taille de police importante */
+  border: none; /* Aucun contour */
+  border-radius: 8px; /* Coins arrondis */
+  background: #f1f2f6; /* Couleur de fond douce */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre interne pour l'effet enfoncé */
+  color: #333; /* Texte en gris foncé */
+}
+
+/* Conteneur des boutons */
+.buttons {
+  display: grid; /* Utilisation d'une grille pour organiser les boutons */
+  grid-template-columns: repeat(4, 1fr); /* Divise en 4 colonnes de tailles égales */
+  gap: 10px; /* Espacement entre les boutons */
+}
+
+/* Style commun pour tous les boutons */
+button {
+  padding: 15px; /* Espacement interne */
+  font-size: 1.2rem; /* Taille de police moyenne */
+  border: none; /* Pas de bordure */
+  border-radius: 8px; /* Coins arrondis */
+  cursor: pointer; /* Change le curseur en pointeur */
+  transition: transform 0.2s ease, background-color 0.3s ease; /* Animation douce pour les interactions */
+  background: #f1f2f6; /* Couleur de fond douce */
+  color: #333; /* Texte en gris foncé */
+  font-weight: bold; /* Texte en gras */
+}
+
+/* Boutons des opérateurs (+, -, ÷, ×) */
+button.operator {
+  background: #11cbbb; /* Couleur violette pour se distinguer */
+  color: #fff; /* Texte blanc pour le contraste */
+}
+
+/* Bouton "=" pour le calcul */
+button.equal {
+  background: #11cbbb; /* Couleur bleue pour attirer l'attention */
+  color: #fff; /* Texte blanc */
+  grid-column: span 4; /* Le bouton s'étend sur toutes les colonnes */
+}
+
+/* Bouton pour effacer tout ("C") */
+button.clear {
+  background: #7732f8; /* Couleur rouge pour signaler une action de réinitialisation */
+  color: #fff; /* Texte blanc */
+}
+
+/* Bouton pour effacer un seul caractère */
+button.backspace {
+  background: #7732f8; /* Couleur orange pour différencier l'action */
+  color: #fff; /* Texte blanc */
+  font-weight: bold; /* Texte en gras */
+}
+
+/* Effet de survol (hover) sur tous les boutons */
+button:hover {
+  transform: scale(1.05); /* Légère augmentation de taille */
+  background-color: rgba(0, 0, 0, 0.1); /* Couleur de fond transparente ajoutée */
+}
+
+/* Effet lors du clic sur un bouton */
+button:active {
+  transform: scale(1); /* Retour à la taille normale lors du clic */
+}
+
+/* Effet de survol spécifique pour le bouton "Effacer" */
+button.backspace:hover {
+  background: #ff7f50; /* Couleur légèrement différente au survol */
+}
+
+/* Résolution pour petits écrans */
+@media (max-width: 400px) {
+  .calculator {
+      width: 90%; /* Adapte la largeur pour les petits écrans */
+  }
+
+  button {
+      font-size: 1rem; /* Réduit la taille de la police */
+      padding: 10px; /* Réduit l'espacement interne */
+  }
+
+  .display input {
+      font-size: 1.2rem; /* Réduit la taille de la police de l'affichage */
+  }
+}
